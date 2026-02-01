@@ -1,19 +1,18 @@
-baseURL = 'https://elr0nda10.github.io/'
+baseURL = 'https://geene.io/'
 languageCode = 'en-us'
-title = 'Inside'
-theme = 'bootstrap-bp-hugo-startpage'
+title = 'GeeNe'
+theme = 'mainroad'
 
 [params]
-  author = ["elr0nda"]
-  description = "Inside"
+  author = "elr0nda"
+  description = "My Virtual Brain"
+  readmore = true
 
-[menu]
-  [[menu.main]]
-    name = "Posts"
-    url = "/posts/"
-    weight = 1
-  [[menu.main]]
-    name = "About"
-    url = "/about/"
-    weight = 2
+#[Params.style.vars]
+#  highlightColor = "#483888"
 
+[params.logo]
+  image = "img/logo.jpg"
+  title = "GeeNe"
+  subtitle = "The imaginary world where Geek and Nerd particles coexist"
+  highlightColor = "#00FF00"
