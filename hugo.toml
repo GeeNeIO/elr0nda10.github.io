@@ -1,0 +1,19 @@
+baseURL = 'https://elr0nda10.github.io/'
+languageCode = 'en-us'
+title = 'Inside'
+theme = 'bootstrap-bp-hugo-startpage'
+
+[params]
+  author = ["elr0nda"]
+  description = "Inside""
+
+[menu]
+  [[menu.main]]
+    name = "Posts"
+    url = "/posts/"
+    weight = 1
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+
