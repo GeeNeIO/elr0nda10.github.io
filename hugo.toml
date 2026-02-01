@@ -5,7 +5,7 @@ theme = 'bootstrap-bp-hugo-startpage'
 
 [params]
   author = ["elr0nda"]
-  description = "Inside""
+  description = "Inside"
 
 [menu]
   [[menu.main]]
