@@ -14,6 +14,4 @@ This is a space where I explore the intersection of software engineering, mathem
 - **Piano & Music**: The art of making music and its surprising connections to programming
 - **Travel & Tech**: Adventures of a traveling developer working from around the globe
 
-## Latest Posts
-
-The latest articles appear below. Dive in and explore!
+Visit the [Blog](/post/) to read the latest articles.
