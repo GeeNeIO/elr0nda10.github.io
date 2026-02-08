@@ -133,7 +133,7 @@ copyright = 'GeeNe'
   # Set to false to disable logo image
   # Max size: 128x128px (with text), 256px height (image only)
   # SVG format recommended
-  # image = "img/logo.jpg" # Uncomment and add your logo image
+  image = "img/logo.jpg" # Uncomment and add your logo image
 
   # Logo title text
   # Set to false to disable, defaults to site title if not set
