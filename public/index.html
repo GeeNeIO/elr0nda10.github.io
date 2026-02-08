@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>GeeNe</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="My Virtual Brain">
+	<meta name="description" content="Personal blog about software engineering, math, and piano, written by a traveling developer.">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -24,44 +24,146 @@
 		<header class="header">
 	<div class="container header__container">
 		
-	<div class="logo logo--mixed">
+	<div class="logo">
 		<a class="logo__link" href="/" title="GeeNe" rel="home">
-			<div class="logo__item logo__imagebox">
-					<img class="logo__img" src="/img/logo.jpg">
-				</div><div class="logo__item logo__text">
+			<div class="logo__item logo__text">
 					<div class="logo__title">GeeNe</div>
 					<div class="logo__tagline">The imaginary world where Geek and Nerd particles coexist</div>
 				</div>
 		</a>
 	</div>
-		<div class="divider"></div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/">
+				
+				<span class="menu__text">Blog</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">About</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
 	</div>
 </header>
 		<div class="wrapper flex">
 			<div class="primary">
 			
 <main class="main list" role="main">
-	
-		<div class="warning">
-			<svg class="warning__icon icon icon-files" width="96" height="96" viewBox="0 0 96 96"><path d="M96 16H32v80h64zm-8 72H40V24h48zM8 8h48v4h8V0H0v80h28v-8H8zm4 12h16v8H12Zm0 16h16v8H12Zm0 16h16v8H12Zm32-8v-8h40v8Zm0 8h40v8H44Zm0 16h40v8H44Z"/></svg>
-			<h3 class="warning__headline">You don't have any posts yet!</h3>
-			<div class="warning__text">
-				<p class="warning__description">Once you post something in any folder (section) under the <b>content</b> directory, it will appear here. Only one section (with the most posts) will be displayed on the main page by default.</p>
-				<p class="warning__tip"><b>Tip:</b> You can show as many sections as you like with <b><a href="https://gohugo.io/functions/where/#mainsections" rel="nofollow noopener" target="_blank">mainSections</a></b> config parameter.</p>
-			</div>
-		</div>
-	
+	<div class="content main__content clearfix">
+		<p>Welcome to <strong>GeeNe</strong>, where technology meets creativity in the most unexpected ways.</p>
+<p>This is a space where I explore the intersection of software engineering, mathematics, and music. Whether you&rsquo;re a developer looking for technical insights, a math enthusiast seeking elegant solutions, or simply curious about the world through a geek&rsquo;s lens, you&rsquo;re in the right place.</p>
+<h2 id="what-youll-find-here">What You&rsquo;ll Find Here</h2>
+<ul>
+<li><strong>Software Engineering</strong>: Best practices, architecture patterns, and real-world development experiences</li>
+<li><strong>Mathematics</strong>: From algorithms to abstract concepts, exploring the beauty of mathematical thinking</li>
+<li><strong>Piano &amp; Music</strong>: The art of making music and its surprising connections to programming</li>
+<li><strong>Travel &amp; Tech</strong>: Adventures of a traveling developer working from around the globe</li>
+</ul>
+<h2 id="latest-posts">Latest Posts</h2>
+<p>The latest articles appear below. Dive in and explore!</p>
+
+	</div>
+	<article class="list__item post">
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/clean-code-principles/" rel="bookmark">
+			5 Clean Code Principles That Changed How I Write Software
+			</a>
+		</h2>
+		<div class="list__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 16 16"><path d="M8 1c2 0 3.5 2 3.5 4.5S10 9 10 9c3 1 4 2 4 6H2c0-4 1-5 4-6 0 0-1.5-1-1.5-3.5S6 1 8 1"/></svg><span class="meta__text">elr0nda</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0a14 14 0 1 1 0 28 1 1 0 0 1 0-28m0 3a3 3 0 1 0 0 22 3 3 0 0 0 0-22m1 4h-2v8.4l6.8 4.4L22 18l-6-3.8z"/></svg><time class="meta__text" datetime="2026-02-07T14:30:00Z">Feb 7, 2026</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/software-engineering/" rel="category">Software Engineering</a>
+	</span>
+</div></div>
+	</header>
+</article>
+<article class="list__item post">
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/markdown-syntax-guide/" rel="bookmark">
+			Markdown Syntax Guide
+			</a>
+		</h2>
+		<div class="list__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 16 16"><path d="M8 1c2 0 3.5 2 3.5 4.5S10 9 10 9c3 1 4 2 4 6H2c0-4 1-5 4-6 0 0-1.5-1-1.5-3.5S6 1 8 1"/></svg><span class="meta__text">elr0nda</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0a14 14 0 1 1 0 28 1 1 0 0 1 0-28m0 3a3 3 0 1 0 0 22 3 3 0 0 0 0-22m1 4h-2v8.4l6.8 4.4L22 18l-6-3.8z"/></svg><time class="meta__text" datetime="2026-02-06T11:00:00Z">Feb 6, 2026</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/documentation/" rel="category">Documentation</a>
+	</span>
+</div></div>
+	</header>
+</article>
+
 </main>
 
 
 			</div>
-			
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<input class="widget-search__field" type="search" placeholder="Search…" value="" name="q" aria-label="Search…">
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="http://localhost:1313/">
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/clean-code-principles/">5 Clean Code Principles That Changed How I Write Software</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/markdown-syntax-guide/">Markdown Syntax Guide</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/documentation/">Documentation</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/software-engineering/">Software Engineering</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/best-practices/" title="Best-Practices">Best-Practices</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/clean-code/" title="Clean-Code">Clean-Code</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/markdown/" title="Markdown">Markdown</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/reference/" title="Reference">Reference</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/software-architecture/" title="Software-Architecture">Software-Architecture</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/writing/" title="Writing">Writing</a>
+	</div>
+</div>
+</aside>
 		</div>
 		<footer class="footer">
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2026 GeeNe.
+			&copy; 2026 elr0nda.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>

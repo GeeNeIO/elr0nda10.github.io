@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Best-Practices on GeeNe</title>
+    <link>http://localhost:1313/tags/best-practices/</link>
+    <description>Recent content in Best-Practices on GeeNe</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 07 Feb 2026 14:30:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/best-practices/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>5 Clean Code Principles That Changed How I Write Software</title>
+      <link>http://localhost:1313/post/clean-code-principles/</link>
+      <pubDate>Sat, 07 Feb 2026 14:30:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/clean-code-principles/</guid>
+      <description>&lt;p&gt;We&amp;rsquo;ve all been there - staring at code we wrote six months ago, wondering what we were thinking. Over the years, I&amp;rsquo;ve learned that clean code isn&amp;rsquo;t about being clever; it&amp;rsquo;s about being kind to your future self (and your teammates).&lt;/p&gt;&#xA;&lt;p&gt;Here are five principles that fundamentally changed how I approach software development.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-code-should-read-like-prose&#34;&gt;1. Code Should Read Like Prose&lt;/h2&gt;&#xA;&lt;p&gt;Your code is read far more often than it&amp;rsquo;s written. Make it easy to understand.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

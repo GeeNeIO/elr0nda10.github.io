@@ -1,0 +1,398 @@
+# ============================================================================
+# HUGO CORE CONFIGURATION
+# ============================================================================
+
+# Base URL of your site - REQUIRED
+# Change this to your actual domain
+baseURL = 'https://geene.io/'
+
+# Language code for content
+# Supported languages: bg, bn, cs, de, en, es, fi, fr, hr, hu, id, it, ja, kk, mk, nl, pt-br, pt, ru, sv, uk, zh-cn, zh-tw
+languageCode = 'en-us'
+
+# Title of your website - appears in browser title and RSS feed
+title = 'GeeNe'
+
+# Theme name - must match the directory name in themes/
+theme = 'mainroad'
+
+# Number of posts per page for pagination
+[pagination]
+  pagerSize = 10
+
+# Enable emoji support in content
+enableEmoji = true
+
+# Copyright notice - if not set, defaults to author name or site title
+copyright = 'GeeNe'
+
+# ============================================================================
+# HUGO SERVICES (Analytics, Comments, etc.)
+# ============================================================================
+
+# Disqus comments integration
+[services.disqus]
+  shortname = "" # Your Disqus shortname - leave empty to disable
+
+# Google Analytics integration
+[services.googleAnalytics]
+  ID = "" # Your GA4 measurement ID (e.g., "G-XXXXXXXXXX") - leave empty to disable
+
+# ============================================================================
+# AUTHOR INFORMATION
+# Used in authorbox at bottom of posts and RSS feed
+# ============================================================================
+
+[Params.Author]
+  name = "elr0nda"
+  bio = "Your bio text here. This appears in the author box at the bottom of posts when enabled."
+  avatar = "img/avatar.png" # Path relative to static/ directory
+
+# ============================================================================
+# MAINROAD THEME PARAMETERS
+# ============================================================================
+
+[Params]
+  # Site description - used in meta tags and RSS feed
+  description = "My Virtual Brain"
+
+  # Copyright holder name - appears in footer
+  # If not set, defaults to site title
+  copyright = "elr0nda"
+
+  # Enable OpenGraph meta tags for social media sharing
+  opengraph = true
+
+  # Enable Schema.org structured data
+  schema = true
+
+  # Enable Twitter Cards meta tags
+  twitter_cards = true
+
+  # Show "Read more" button in post list view
+  readmore = true
+
+  # Show author box at bottom of posts (can be overridden per post)
+  authorbox = true
+
+  # Enable Table of Contents on posts (can be overridden per post)
+  toc = true
+
+  # Show previous/next post navigation at bottom of posts
+  pager = true
+
+  # Order and selection of post meta information displayed
+  # Available fields: "author", "date", "categories", "translations"
+  post_meta = ["author", "date", "categories", "translations"]
+
+  # Define which sections are considered "main" content
+  # These sections appear on homepage and in "Recent articles" widget
+  mainSections = ["post", "blog", "news"]
+
+  # Date format for post dates
+  # Uses Go time format: https://gohugo.io/functions/format/#gos-layout-string
+  dateformat = "2006-01-02" # YYYY-MM-DD format
+  # Examples:
+  # "January 2, 2006" → Full month name
+  # "Jan 2, 2006" → Short month name
+  # "02/01/2006" → DD/MM/YYYY
+  # "2006-01-02" → YYYY-MM-DD (ISO 8601)
+
+  # MathJax for mathematical formulas
+  mathjax = false # Set to true to enable
+  mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js"
+  mathjaxConfig = "TeX-AMS-MML_HTMLorMML"
+
+  # Google Fonts integration
+  # Set to false to disable and use system fonts instead
+  googleFontsLink = "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700"
+
+  # Custom CSS files to include
+  # Place files in static/css/ directory
+  customCSS = ["css/custom.css"]
+
+  # Custom JavaScript files to include
+  # Place files in static/js/ directory
+  customJS = ["js/custom.js"]
+
+# ============================================================================
+# STYLE CUSTOMIZATION
+# Override theme colors and fonts
+# ============================================================================
+
+[Params.style.vars]
+  # Primary highlight color used throughout the site
+  # Used for links, buttons, and accents
+  highlightColor = "#483888"
+
+  # Override primary font family
+  # Default: "'Open Sans', Helvetica, Arial, sans-serif"
+  fontFamilyPrimary = "'Open Sans', Helvetica, Arial, sans-serif"
+
+  # Override secondary font family (for code blocks)
+  # Default: "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace"
+  fontFamilySecondary = "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace"
+
+# ============================================================================
+# LOGO CONFIGURATION
+# Customize the site header logo area
+# ============================================================================
+
+[Params.logo]
+  # Logo image path (relative to static/ directory)
+  # Set to false to disable logo image
+  # Max size: 128x128px (with text), 256px height (image only)
+  # SVG format recommended
+  image = "img/logo.jpg"
+
+  # Logo title text
+  # Set to false to disable, defaults to site title if not set
+  title = "GeeNe"
+
+  # Logo subtitle text
+  # Set to false to disable
+  subtitle = "The imaginary world where Geek and Nerd particles coexist"
+
+# ============================================================================
+# THUMBNAIL CONFIGURATION
+# Control thumbnail image visibility
+# ============================================================================
+
+[Params.thumbnail]
+  # Control where thumbnails appear
+  # Options: ["list"], ["post"], or ["list", "post"]
+  # "list" = show on list/archive pages
+  # "post" = show on individual post pages
+  visibility = ["list", "post"]
+
+# ============================================================================
+# SIDEBAR CONFIGURATION
+# Control sidebar position and content
+# ============================================================================
+
+[Params.sidebar]
+  # Sidebar position for home page
+  # Options: "left", "right", or false (to disable)
+  home = "right"
+
+  # Sidebar position for list pages (categories, tags, archives)
+  list = "right"
+
+  # Sidebar position for single post pages
+  single = "right"
+
+  # Enable widgets in the sidebar (order matters)
+  # Available widgets: search, ddg-search, recent, categories, taglist, social, languages, sidemenu
+  widgets = ["search", "recent", "categories", "taglist", "social", "languages"]
+
+# ============================================================================
+# WIDGETS CONFIGURATION
+# Customize individual widget behavior
+# ============================================================================
+
+[Params.widgets]
+  # Number of recent articles to show in "Recent" widget
+  recent_num = 5
+
+  # Show post count next to each category in "Categories" widget
+  categories_counter = false
+
+  # Show post count next to each tag in "Tags" widget
+  tags_counter = false
+
+# ----------------------------------------------------------------------------
+# Search Widget Configuration
+# ----------------------------------------------------------------------------
+
+[Params.widgets.search]
+  # Enable caching for faster site builds
+  cached = false
+
+  # Search engine URL
+  # Options:
+  # - Google (default): "https://google.com/search"
+  # - DuckDuckGo: "https://duckduckgo.com/"
+  # - Bing: "https://www.bing.com/search"
+  url = "https://google.com/search"
+
+  [Params.widgets.search.input]
+    # Input field name parameter
+    # Google: "sitesearch", DuckDuckGo: "sites", Bing: "q1"
+    name = "sitesearch"
+
+    # Prefix for search query
+    # Google: "", DuckDuckGo: "", Bing: "site:"
+    pre = ""
+
+# ----------------------------------------------------------------------------
+# Recent Widget Configuration
+# ----------------------------------------------------------------------------
+
+[Params.widgets.recent]
+  # Enable caching for faster site builds
+  cached = false
+
+# ----------------------------------------------------------------------------
+# Categories Widget Configuration
+# ----------------------------------------------------------------------------
+
+[Params.widgets.categories]
+  # Enable caching for faster site builds
+  cached = false
+
+# ----------------------------------------------------------------------------
+# Tags Widget Configuration
+# ----------------------------------------------------------------------------
+
+[Params.widgets.taglist]
+  # Enable caching for faster site builds
+  cached = false
+
+# ----------------------------------------------------------------------------
+# Social Widget Configuration
+# ----------------------------------------------------------------------------
+
+[Params.widgets.social]
+  # Enable caching for faster site builds
+  cached = false
+
+  # Social media usernames/handles
+  # Remove or leave empty to hide specific platforms
+  facebook = ""
+  twitter = ""
+  instagram = ""
+  linkedin = ""
+  telegram = ""
+  github = "elr0nda"
+  gitlab = ""
+  bitbucket = ""
+  email = "your@email.com"
+
+  # Custom social links (can add multiple)
+  # Uncomment and customize as needed
+
+  # [[Params.widgets.social.custom]]
+  #   title = "YouTube"
+  #   url = "https://youtube.com/@username"
+  #   icon = "youtube.svg" # Optional: place SVG icon in layouts/partials/
+  #   rel = "noopener noreferrer" # Set to false to remove rel attribute
+
+  # [[Params.widgets.social.custom]]
+  #   title = "My Website"
+  #   url = "https://example.com"
+
+# ----------------------------------------------------------------------------
+# Languages Widget Configuration
+# ----------------------------------------------------------------------------
+
+[Params.widgets.languages]
+  # Enable caching for faster site builds
+  cached = false
+
+# ============================================================================
+# MENU CONFIGURATION
+# Define navigation menus
+# ============================================================================
+
+# Main menu (top navigation bar)
+# Add pages to menu via front matter: menu = "main"
+# Or define manually here:
+
+# [[menu.main]]
+#   name = "Home"
+#   url = "/"
+#   weight = 1
+
+# [[menu.main]]
+#   name = "About"
+#   url = "/about/"
+#   weight = 2
+
+# [[menu.main]]
+#   name = "Blog"
+#   url = "/post/"
+#   weight = 3
+
+# Side menu (appears in sidebar when sidemenu widget is enabled)
+# [[menu.side]]
+#   name = "Example"
+#   url = "/example/"
+
+# Footer menu (appears in site footer)
+# [[menu.footer]]
+#   name = "Privacy"
+#   url = "/privacy/"
+
+# ============================================================================
+# MULTILINGUAL CONFIGURATION (Optional)
+# Uncomment to enable multilingual support
+# ============================================================================
+
+# [languages]
+#   [languages.en]
+#     languageName = "English"
+#     weight = 1
+#
+#   [languages.es]
+#     languageName = "Español"
+#     weight = 2
+#     title = "GeeNe ES"
+#     [languages.es.params]
+#       description = "Mi cerebro virtual"
+
+# ============================================================================
+# ADDITIONAL HUGO CONFIGURATION
+# ============================================================================
+
+# Taxonomy configuration (categories and tags)
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+# Markup configuration
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true  # Allow raw HTML in markdown files
+
+# Permalink structure for posts
+# [permalinks]
+#   post = "/:year/:month/:slug/"
+
+# Output formats
+# [outputs]
+#   home = ["HTML", "RSS", "JSON"]
+#   section = ["HTML", "RSS"]
+
+# Minify output HTML, CSS, JS, JSON, SVG, XML
+# [minify]
+#   minifyOutput = true
+
+# ============================================================================
+# NOTES
+# ============================================================================
+
+# 1. Widget caching (cached = true) significantly improves build times
+#    Enable for production sites with many pages
+#
+# 2. To disable Google Fonts and use system fonts:
+#    Set googleFontsLink = false
+#
+# 3. Available widgets:
+#    - search: Search box
+#    - recent: Recent articles
+#    - categories: Category list
+#    - taglist: Tag list
+#    - social: Social media links
+#    - languages: Language switcher (multilingual sites only)
+#    - sidemenu: Side menu navigation
+#
+# 4. Per-page overrides:
+#    Most parameters can be overridden in individual post front matter
+#    Example: sidebar = false, authorbox = true, toc = false
+#
+# 5. Custom widgets:
+#    Create custom widgets in layouts/partials/widgets/your-widget.html
+#    Then add "your-widget" to the widgets list
+#
+# 6. Minimum Hugo version: 0.54.0 or later

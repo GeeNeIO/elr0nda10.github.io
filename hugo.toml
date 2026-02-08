@@ -1,19 +1,230 @@
+# ============================================================================
+# HUGO CORE CONFIGURATION
+# ============================================================================
+
+# Base URL of your site - REQUIRED
+# Change this to your actual domain
 baseURL = 'https://geene.io/'
+
+# Language code for content
+# Supported languages: bg, bn, cs, de, en, es, fi, fr, hr, hu, id, it, ja, kk, mk, nl, pt-br, pt, ru, sv, uk, zh-cn, zh-tw
 languageCode = 'en-us'
+
+# Title of your website - appears in browser title and RSS feed
 title = 'GeeNe'
+
+# Theme name - must match the directory name in themes/
 theme = 'mainroad'
 
-[params]
-  author = "elr0nda"
-  description = "My Virtual Brain"
+# Number of posts per page for pagination
+[pagination]
+  pagerSize = 10
+
+# Enable emoji support in content
+enableEmoji = true
+
+# Copyright notice - if not set, defaults to author name or site title
+copyright = 'GeeNe'
+
+
+# ============================================================================
+# AUTHOR INFORMATION
+# Used in authorbox at bottom of posts and RSS feed
+# ============================================================================
+
+[Params.Author]
+  name = "elr0nda"
+  bio = "Software engineer, math enthusiast, and pianist exploring the intersection of code, algorithms, and creativity while traveling the world."
+  avatar = "img/avatar.png" # Path relative to static/ directory - uncomment and add your avatar image
+
+# ============================================================================
+# MAINROAD THEME PARAMETERS
+# ============================================================================
+
+[Params]
+  # Site description - used in meta tags and RSS feed
+  description = "Personal blog about software engineering, math, and piano, written by a traveling developer."
+
+  # Copyright holder name - appears in footer
+  # If not set, defaults to site title
+  copyright = "elr0nda"
+
+  # Enable OpenGraph meta tags for social media sharing
+  # opengraph = true
+
+  # Enable Schema.org structured data
+  # schema = true
+
+  # Enable Twitter Cards meta tags
+  # twitter_cards = true
+
+  # Show "Read more" button in post list view
   readmore = true
+
+  # Show author box at bottom of posts (can be overridden per post)
+  authorbox = true
+
+  # Enable Table of Contents on posts (can be overridden per post)
+  toc = true
+
+  # Show previous/next post navigation at bottom of posts
+  pager = true
+
+  # Order and selection of post meta information displayed
+  # Available fields: "author", "date", "categories", "translations"
+  post_meta = ["author", "date", "categories", "translations"]
+
+  # Define which sections are considered "main" content
+  # These sections appear on homepage and in "Recent articles" widget
+  mainSections = ["post", "blog", "news"]
+
+  # Date format for post dates
+  # Uses Go time format: https://gohugo.io/functions/format/#gos-layout-string
+  dateformat = "Jan 2, 2006" # YYYY-MM-DD format
+  # Examples:
+  # "January 2, 2006" → Full month name
+  # "Jan 2, 2006" → Short month name
+  # "02/01/2006" → DD/MM/YYYY
+  # "2006-01-02" → YYYY-MM-DD (ISO 8601)
+
+  # MathJax for mathematical formulas
+  mathjax = true # Set to true to enable
+  mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js"
+  mathjaxConfig = "TeX-AMS-MML_HTMLorMML"
+
+  # Google Fonts integration
+  # Set to false to disable and use system fonts instead
+  googleFontsLink = "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700"
+
+  # Custom CSS files to include
+  # Place files in static/css/ directory
+  # customCSS = ["css/custom.css"]
+
+  # Custom JavaScript files to include
+  # Place files in static/js/ directory
+  # customJS = ["js/custom.js"]
+
+
+# ============================================================================
+# STYLE CUSTOMIZATION
+# Override theme colors and fonts
+# ============================================================================
+
+[Params.style.vars]
+  # Primary highlight color used throughout the site
+  # Used for links, buttons, and accents
   highlightColor = "#483888"
 
-#[Params.style.vars]
-#  highlightColor = "#483888"
+  # Override primary font family
+  # Default: "'Open Sans', Helvetica, Arial, sans-serif"
+  # fontFamilyPrimary = "'Open Sans', Helvetica, Arial, sans-serif"
 
-[params.logo]
-  image = "img/logo.jpg"
+  # Override secondary font family (for code blocks)
+  # Default: "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace"
+  # fontFamilySecondary = "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace"
+
+# ============================================================================
+# LOGO CONFIGURATION
+# Customize the site header logo area
+# ============================================================================
+
+[Params.logo]
+  # Logo image path (relative to static/ directory)
+  # Set to false to disable logo image
+  # Max size: 128x128px (with text), 256px height (image only)
+  # SVG format recommended
+  # image = "img/logo.jpg" # Uncomment and add your logo image
+
+  # Logo title text
+  # Set to false to disable, defaults to site title if not set
   title = "GeeNe"
+
+  # Logo subtitle text
+  # Set to false to disable
   subtitle = "The imaginary world where Geek and Nerd particles coexist"
-  highlightColor = "#00FF00"
+
+
+# ============================================================================
+# SIDEBAR CONFIGURATION
+# Control sidebar position and content
+# ============================================================================
+
+[Params.sidebar]
+  # Sidebar position for home page
+  # Options: "left", "right", or false (to disable)
+  home = "right"
+
+  # Sidebar position for list pages (categories, tags, archives)
+  list = "right"
+
+  # Sidebar position for single post pages
+  single = "right"
+
+  # Enable widgets in the sidebar (order matters)
+  # Available widgets: search, ddg-search, recent, categories, taglist, social, languages, sidemenu
+  widgets = ["search", "recent", "categories", "taglist", "social", "languages"]
+
+# ============================================================================
+# WIDGETS CONFIGURATION
+# Customize individual widget behavior
+# ============================================================================
+
+[Params.widgets]
+  # Number of recent articles to show in "Recent" widget
+  recent_num = 5
+
+  # Show post count next to each category in "Categories" widget
+  categories_counter = false
+
+  # Show post count next to each tag in "Tags" widget
+  tags_counter = false
+
+# ============================================================================
+# MENU CONFIGURATION
+# Define navigation menus
+# ============================================================================
+
+# Main menu (top navigation bar)
+# Add pages to menu via front matter: menu = "main"
+# Or define manually here:
+
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "Blog"
+  url = "/post/"
+  weight = 2
+
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 3
+
+# Side menu (appears in sidebar when sidemenu widget is enabled)
+# [[menu.side]]
+#   name = "Example"
+#   url = "/example/"
+
+# Footer menu (appears in site footer)
+# [[menu.footer]]
+#   name = "Privacy"
+#   url = "/privacy/"
+
+
+# ============================================================================
+# ADDITIONAL HUGO CONFIGURATION
+# ============================================================================
+
+# Taxonomy configuration (categories and tags)
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+# Markup configuration
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true  # Allow raw HTML in markdown files

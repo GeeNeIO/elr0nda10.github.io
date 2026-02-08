@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>5 Clean Code Principles That Changed How I Write Software - GeeNe</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Practical lessons from years of writing and maintaining production code">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="GeeNe" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">GeeNe</div>
+					<div class="logo__tagline">The imaginary world where Geek and Nerd particles coexist</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/">
+				
+				<span class="menu__text">Blog</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">About</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">5 Clean Code Principles That Changed How I Write Software</h1>
+			<p class="post__lead">After years of maintaining legacy code and building new systems, these principles have become my north star for writing maintainable software.</p>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 16 16"><path d="M8 1c2 0 3.5 2 3.5 4.5S10 9 10 9c3 1 4 2 4 6H2c0-4 1-5 4-6 0 0-1.5-1-1.5-3.5S6 1 8 1"/></svg><span class="meta__text">elr0nda</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0a14 14 0 1 1 0 28 1 1 0 0 1 0-28m0 3a3 3 0 1 0 0 22 3 3 0 0 0 0-22m1 4h-2v8.4l6.8 4.4L22 18l-6-3.8z"/></svg><time class="meta__text" datetime="2026-02-07T14:30:00Z">Feb 7, 2026</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/software-engineering/" rel="category">Software Engineering</a>
+	</span>
+</div></div>
+		</header>
+		
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-code-should-read-like-prose">1. Code Should Read Like Prose</a></li>
+    <li><a href="#2-functions-should-do-one-thing-and-do-it-well">2. Functions Should Do One Thing (And Do It Well)</a></li>
+    <li><a href="#3-eliminate-magic-numbers-and-strings">3. Eliminate Magic Numbers and Strings</a></li>
+    <li><a href="#4-fail-fast-and-loudly">4. Fail Fast and Loudly</a></li>
+    <li><a href="#5-delete-code-dont-comment-it-out">5. Delete Code, Don&rsquo;t Comment It Out</a></li>
+    <li><a href="#the-real-impact">The Real Impact</a></li>
+    <li><a href="#start-small">Start Small</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<p>We&rsquo;ve all been there - staring at code we wrote six months ago, wondering what we were thinking. Over the years, I&rsquo;ve learned that clean code isn&rsquo;t about being clever; it&rsquo;s about being kind to your future self (and your teammates).</p>
+<p>Here are five principles that fundamentally changed how I approach software development.</p>
+<h2 id="1-code-should-read-like-prose">1. Code Should Read Like Prose</h2>
+<p>Your code is read far more often than it&rsquo;s written. Make it easy to understand.</p>
+<p><strong>Bad:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">calc</span>(x, y, z):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (x <span style="color:#f92672">*</span> y) <span style="color:#f92672">/</span> z <span style="color:#66d9ef">if</span> z <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">else</span> <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><p><strong>Good:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">calculate_average_velocity</span>(distance, time, adjustment_factor):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Calculate average velocity with adjustment factor applied.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> adjustment_factor <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (distance <span style="color:#f92672">*</span> time) <span style="color:#f92672">/</span> adjustment_factor
+</span></span></code></pre></div><p>The second version is self-documenting. No comments needed - the code explains itself.</p>
+<h2 id="2-functions-should-do-one-thing-and-do-it-well">2. Functions Should Do One Thing (And Do It Well)</h2>
+<p>A function with a clear, single responsibility is easier to test, debug, and reuse.</p>
+<p><strong>Bad:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">process_user</span>(user_data):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Validate</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> user_data<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;email&#39;</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">&#34;Email required&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Save to database</span>
+</span></span><span style="display:flex;"><span>    db<span style="color:#f92672">.</span>save(user_data)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Send welcome email</span>
+</span></span><span style="display:flex;"><span>    send_email(user_data[<span style="color:#e6db74">&#39;email&#39;</span>], <span style="color:#e6db74">&#34;Welcome!&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Log analytics</span>
+</span></span><span style="display:flex;"><span>    analytics<span style="color:#f92672">.</span>track(<span style="color:#e6db74">&#39;user_created&#39;</span>, user_data)
+</span></span></code></pre></div><p><strong>Good:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">process_user</span>(user_data):
+</span></span><span style="display:flex;"><span>    validated_user <span style="color:#f92672">=</span> validate_user_data(user_data)
+</span></span><span style="display:flex;"><span>    saved_user <span style="color:#f92672">=</span> save_user_to_database(validated_user)
+</span></span><span style="display:flex;"><span>    send_welcome_email(saved_user)
+</span></span><span style="display:flex;"><span>    track_user_creation(saved_user)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> saved_user
+</span></span></code></pre></div><p>Each function now has a single, clear purpose. Testing and debugging become trivial.</p>
+<h2 id="3-eliminate-magic-numbers-and-strings">3. Eliminate Magic Numbers and Strings</h2>
+<p>Future you will thank present you for explaining what those numbers mean.</p>
+<p><strong>Bad:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">loginAttempts</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">5</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">lockAccount</span>(<span style="color:#a6e22e">user</span>, <span style="color:#ae81ff">1800</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Good:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">MAX_LOGIN_ATTEMPTS</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">LOCKOUT_DURATION_SECONDS</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">30</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">60</span>; <span style="color:#75715e">// 30 minutes
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">loginAttempts</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">MAX_LOGIN_ATTEMPTS</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">lockAccount</span>(<span style="color:#a6e22e">user</span>, <span style="color:#a6e22e">LOCKOUT_DURATION_SECONDS</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Constants make your code self-documenting and easier to modify.</p>
+<h2 id="4-fail-fast-and-loudly">4. Fail Fast and Loudly</h2>
+<p>Don&rsquo;t let errors propagate silently. Catch problems early and communicate clearly.</p>
+<p><strong>Bad:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_user_age</span>(user_id):
+</span></span><span style="display:flex;"><span>    user <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>get_user(user_id)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> user:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> user<span style="color:#f92672">.</span>age
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>  <span style="color:#75715e"># Silent failure</span>
+</span></span></code></pre></div><p><strong>Good:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_user_age</span>(user_id):
+</span></span><span style="display:flex;"><span>    user <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>get_user(user_id)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> user <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> UserNotFoundError(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;User </span><span style="color:#e6db74">{</span>user_id<span style="color:#e6db74">}</span><span style="color:#e6db74"> not found&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> user<span style="color:#f92672">.</span>age
+</span></span></code></pre></div><p>Explicit errors make debugging infinitely easier and prevent bugs from hiding.</p>
+<h2 id="5-delete-code-dont-comment-it-out">5. Delete Code, Don&rsquo;t Comment It Out</h2>
+<p>Version control exists for a reason. Commented code creates noise and confusion.</p>
+<p><strong>Bad:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">calculatePrice</span>(<span style="color:#a6e22e">item</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Old calculation
+</span></span></span><span style="display:flex;"><span>    <span style="color:#75715e">// return item.price * 0.9;
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Previous version
+</span></span></span><span style="display:flex;"><span>    <span style="color:#75715e">// return item.price * (1 - item.discount);
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Current version
+</span></span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">basePrice</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">quantity</span> <span style="color:#f92672">*</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">discount</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Good:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">calculatePrice</span>(<span style="color:#a6e22e">item</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">basePrice</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">quantity</span> <span style="color:#f92672">*</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">discount</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Trust your version control system. If you need old code, git has your back.</p>
+<h2 id="the-real-impact">The Real Impact</h2>
+<p>Applying these principles has:</p>
+<ul>
+<li><strong>Reduced debugging time</strong> by making code behavior obvious</li>
+<li><strong>Improved team collaboration</strong> through readable, maintainable code</li>
+<li><strong>Decreased bug rate</strong> by catching errors early</li>
+<li><strong>Accelerated onboarding</strong> for new team members</li>
+</ul>
+<h2 id="start-small">Start Small</h2>
+<p>You don&rsquo;t need to refactor everything at once. Start with:</p>
+<ol>
+<li>Name variables clearly in your next PR</li>
+<li>Extract one long function into smaller pieces</li>
+<li>Replace one magic number with a named constant</li>
+</ol>
+<p>Small improvements compound over time.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Clean code isn&rsquo;t about perfection - it&rsquo;s about clarity and maintainability. These five principles have saved me countless hours of debugging and frustration.</p>
+<p>What principles guide your coding? I&rsquo;d love to hear what works for you.</p>
+<hr>
+<p><strong>Further Reading:</strong></p>
+<ul>
+<li><em>Clean Code</em> by Robert C. Martin</li>
+<li><em>The Pragmatic Programmer</em> by Hunt and Thomas</li>
+<li><em>Refactoring</em> by Martin Fowler</li>
+</ul>
+<p>What are your favorite clean code practices? Share in the comments below!</p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M4 0h8s2 0 4 2l15 15s2 2 0 4L21 31s-2 2-4 0L2 16s-2-2-2-4V3s0-3 4-3m3 10a3 3 0 0 0 0-6 3 3 0 0 0 0 6"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/clean-code/" rel="tag">clean-code</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/best-practices/" rel="tag">best-practices</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/software-architecture/" rel="tag">software-architecture</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="elr0nda avatar" src="/img/avatar.png" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">About elr0nda</span>
+	</div>
+	<div class="authorbox__description">
+		Software engineer, math enthusiast, and pianist exploring the intersection of code, algorithms, and creativity while traveling the world.
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/markdown-syntax-guide/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Markdown Syntax Guide</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<input class="widget-search__field" type="search" placeholder="Search…" value="" name="q" aria-label="Search…">
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="http://localhost:1313/">
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/clean-code-principles/">5 Clean Code Principles That Changed How I Write Software</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/markdown-syntax-guide/">Markdown Syntax Guide</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/documentation/">Documentation</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/software-engineering/">Software Engineering</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/best-practices/" title="Best-Practices">Best-Practices</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/clean-code/" title="Clean-Code">Clean-Code</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/markdown/" title="Markdown">Markdown</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/reference/" title="Reference">Reference</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/software-architecture/" title="Software-Architecture">Software-Architecture</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/writing/" title="Writing">Writing</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2026 elr0nda.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>

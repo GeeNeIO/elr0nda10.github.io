@@ -1,0 +1,12 @@
+<article class="list__item post">
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="{{ .RelPermalink }}" rel="bookmark">
+			{{ .Title }}
+			</a>
+		</h2>
+		{{ with partial "post_meta.html" . -}}
+		<div class="list__meta meta">{{ . }}</div>
+		{{- end }}
+	</header>
+</article>
