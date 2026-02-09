@@ -193,16 +193,6 @@ copyright = 'GeeNe'
   url = "/"
   weight = 1
 
-[[menu.main]]
-  name = "Blog"
-  url = "/post/"
-  weight = 2
-
-[[menu.main]]
-  name = "About"
-  url = "/about/"
-  weight = 3
-
 # Side menu (appears in sidebar when sidemenu widget is enabled)
 # [[menu.side]]
 #   name = "Example"
